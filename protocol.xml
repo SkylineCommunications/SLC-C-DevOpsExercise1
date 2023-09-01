@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+****************************************************************************
+*  Copyright (c) 2023,  Skyline Communications NV  All Rights Reserved.    *
+****************************************************************************
+
+By using this driver, you expressly agree with the usage terms and
+conditions set out below.
+This driver and all related materials are protected by copyrights and
+other intellectual property rights that exclusively belong
+to Skyline Communications.
+
+A user license granted for this driver is strictly for personal use only.
+This driver may not be used in any way by anyone without the prior
+written consent of Skyline Communications. Any sublicensing of this
+driver is forbidden.
+
+Any modifications to this driver by the user are only allowed for
+personal use and within the intended purpose of the driver,
+and will remain the sole responsibility of the user.
+Skyline Communications will not be responsible for any damages or
+malfunctions whatsoever of the driver resulting from a modification
+or adaptation by the user.
+
+The content of this driver is confidential information.
+The user hereby agrees to keep this confidential information strictly
+secret and confidential and not to disclose or reveal it, in whole
+or in part, directly or indirectly to any person, entity, organization
+or administration without the prior written consent of
+Skyline Communications.
+
+Any inquiries can be addressed to:
+
+	Skyline Communications NV
+	Ambachtenstraat 33
+	B-8870 Izegem
+	Belgium
+	Tel.	: +32 51 31 35 69
+	Fax.	: +32 51 31 01 29
+	E-mail	: info@skyline.be
+	Web		: www.skyline.be
+	Contact	: Ben Vandenberghe
+
+-->
+
+<Protocol xmlns="http://www.skyline.be/protocol">
+	<Name>Skyline DevOpsExercise1</Name>
+	<Description>Skyline DevOpsExercise1 DataMiner connector</Description>
+	<Version>1.0.0.1</Version>
+	<IntegrationID>DMS-DRV-7991</IntegrationID>
+	<Provider>Skyline Communications</Provider>
+	<Vendor>Skyline</Vendor>
+	<VendorOID>1.3.6.1.4.1.8813.2.48</VendorOID>
+	<DeviceOID>147</DeviceOID>
+	<ElementType>Unknown</ElementType>
+	<Type relativeTimers="true">virtual</Type>
+	<Display defaultPage="General" pageOrder="General" wideColumnPages=""/>
+	<SNMP includepages="true">auto</SNMP>
+
+	<Compliancies>
+		<CassandraReady>true</CassandraReady>
+		<MinimumRequiredVersion>10.1.0.0 - 9966</MinimumRequiredVersion>
+	</Compliancies>
+
+	<Params>
+		<Param id="9">
+			<Name>updateUTCTime</Name>
+			<Description>Update UTC Time</Description>
+			<Type>dummy</Type>
+		</Param>
+
+		<Param id="10" trending="false">
+			<Name>currentTimeUtc</Name>
+			<Description>Current Time (UTC)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>This displays the current time in UTC.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Decimals>8</Decimals>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>8</Decimals>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>0</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type options="datetime">number</Type>
+			</Measurement>
+		</Param>
+
+		<Param id="11" trending="false">
+			<Name>timer</Name>
+			<Description>tImeR</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>The current value of a timer in seconds.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>0</DefaultValue>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>1</Row>
+					</Position>
+				</Positions>
+				<Range>
+					<Low>0</Low>
+				</Range>
+				<Units>s</Units>
+			</Display>
+			<Measurement>
+				<Type>number</Type>
+			</Measurement>
+		</Param>
+
+		<Param id="12" trending="false">
+			<Name>timerStatus</Name>
+			<Description>Timer StaTuS</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Status of the timer.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>0</DefaultValue>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>2</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type>discreet</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Stopped</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Running</Display>
+						<Value>1</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+
+		<!-- SuppressValidator 2.49.1 No message needed -->
+		<Param id="15">
+			<Name>BUT_TimerActions</Name>
+			<Type>write</Type>
+			<Information>
+				<Subtext>Start, Pause, Stop or Reset a timer.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Positions>
+					<Position>
+						<Page>General</Page>
+						<Column>0</Column>
+						<Row>3</Row>
+					</Position>
+				</Positions>
+			</Display>
+			<Measurement>
+				<Type width="110">button</Type>
+				<Discreets>
+					<Discreet>
+						<Display>Start Timer</Display>
+						<Value>0</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Stop Timer</Display>
+						<Value>1</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Reset Timer</Display>
+						<Value>2</Value>
+					</Discreet>
+				</Discreets>
+			</Measurement>
+		</Param>
+		<!-- /SuppressValidator 2.49.1 -->
+
+	</Params>
+
+	<QActions>
+		<QAction id="9" name="UpdateUTCTime" encoding="csharp" triggers="9">
+		</QAction>
+		<QAction id="15" name="TimerActions" encoding="csharp" triggers="15">
+		</QAction>
+	</QActions>
+
+	<Groups>
+		<Group id="9">
+			<Name>updateUtcTime</Name>
+			<Description>Update UTC Time</Description>
+			<Type>poll action</Type>
+			<Content>
+				<Action>9</Action>
+			</Content>
+		</Group>
+		<Group id="11">
+			<Name>timerIncrease</Name>
+			<Description>Timer Increase</Description>
+			<Type>poll action</Type>
+			<Condition>id:12 == 1</Condition>
+			<Content>
+				<Action>11</Action>
+			</Content>
+		</Group>
+	</Groups>
+
+	<Triggers>
+
+	</Triggers>
+
+	<Actions>
+		<Action id="9 ">
+			<Name>updateUtcTime</Name>
+			<On id="9">parameter</On>
+			<Type>run actions</Type>
+		</Action>
+		<Action id="11">
+			<Name>incrementTimer</Name>
+			<On id="11">parameter</On>
+			<Type>increment</Type>
+		</Action>
+	</Actions>
+
+	<Timers>
+		<Timer id="1">
+			<Name>Very Fast Timer (1s)</Name>
+			<Time initial="true">1000</Time>
+			<Interval>75</Interval>
+			<Content>
+				<Group>90</Group>
+				<Group>111</Group>
+			</Content>
+		</Timer>
+	</Timers>
+
+	<PortSettings>
+	</PortSettings>
+
+	<VersionHistory>
+		<Branches>
+			<Branch id="1">
+				<Comment>Main Branch</Comment>
+				<SystemVersions>
+					<SystemVersion id="0">
+						<MajorVersions>
+							<MajorVersion id="0">
+								<MinorVersions>
+									<MinorVersion id="1">
+										<Date>2023-08-28</Date>
+										<Provider>
+											<Author>JST</Author>
+											<Company>Skyline Communications</Company>
+										</Provider>
+										<Changes>
+											<NewFeature>Initial version</NewFeature>
+										</Changes>
+									</MinorVersion>
+								</MinorVersions>
+							</MajorVersion>
+						</MajorVersions>
+					</SystemVersion>
+				</SystemVersions>
+			</Branch>
+		</Branches>
+	</VersionHistory>
+
+</Protocol>
