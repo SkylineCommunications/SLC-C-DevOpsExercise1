@@ -47,7 +47,7 @@ Any inquiries can be addressed to:
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline DevOpsExercise1</Name>
 	<Description>Skyline DevOpsExercise1 DataMiner connector</Description>
-	<Version>1.0.0.1</Version>
+	<Version>1.0.0.2</Version>
 	<IntegrationID>DMS-DRV-7991</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline</Vendor>
@@ -101,7 +101,7 @@ Any inquiries can be addressed to:
 
 		<Param id="11" trending="false">
 			<Name>timer</Name>
-			<Description>tImeR</Description>
+			<Description>Timer</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>The current value of a timer in seconds.</Subtext>
@@ -133,7 +133,7 @@ Any inquiries can be addressed to:
 
 		<Param id="12" trending="false">
 			<Name>timerStatus</Name>
-			<Description>Timer StaTuS</Description>
+			<Description>Timer Status</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>Status of the timer.</Subtext>
@@ -245,7 +245,7 @@ Any inquiries can be addressed to:
 	</Triggers>
 
 	<Actions>
-		<Action id="9 ">
+		<Action id="9">
 			<Name>updateUtcTime</Name>
 			<On id="9">parameter</On>
 			<Type>run actions</Type>
@@ -263,8 +263,8 @@ Any inquiries can be addressed to:
 			<Time initial="true">1000</Time>
 			<Interval>75</Interval>
 			<Content>
-				<Group>90</Group>
-				<Group>111</Group>
+				<Group>9</Group>
+				<Group>11</Group>
 			</Content>
 		</Timer>
 	</Timers>
@@ -290,6 +290,23 @@ Any inquiries can be addressed to:
 										<Changes>
 											<NewFeature>Initial version</NewFeature>
 										</Changes>
+									</MinorVersion>
+									<MinorVersion id="2" basedOn="1.0.0.1">
+										<Date>2023-10-06</Date>
+										<Provider>
+											<Author>Alex Silva</Author>
+											<Company>AxDevBR</Company>
+										</Provider>
+										<Changes>
+											<Fix>Tag &#39;Group&#39; references a non-existing &#39;Group&#39;.</Fix>
+											<Fix>Also Minor and Warnig errors fixed.</Fix>
+											<Change>Known Bug: There is sitll a warning regarding missin &#39;name&#39;attribute for &lt;PortSettings&gt;. But does it make sense for a &#39;virtual&#39; connector?</Change>
+											<Change>Known Bug: There is no &lt;Known Bug&gt; tag to keep track of such a thing in Version History.</Change>
+											<NewFeature>Bringing the Thunder - KATA #1 DIS validator exercise. Easy breezy! Thanks.</NewFeature>
+										</Changes>
+										<References>
+											<Reference type="GitHub Repo">https://github.com/AlexJBSilva/SLC-C-DevOpsExercise1/tree/dev</Reference>
+										</References>
 									</MinorVersion>
 								</MinorVersions>
 							</MajorVersion>
