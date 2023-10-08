@@ -101,7 +101,7 @@ Any inquiries can be addressed to:
 
 		<Param id="11" trending="false">
 			<Name>timer</Name>
-			<Description>tImeR</Description>
+			<Description>Timer</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>The current value of a timer in seconds.</Subtext>
@@ -133,7 +133,7 @@ Any inquiries can be addressed to:
 
 		<Param id="12" trending="false">
 			<Name>timerStatus</Name>
-			<Description>Timer StaTuS</Description>
+			<Description>Timer Status</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>Status of the timer.</Subtext>
@@ -236,6 +236,7 @@ Any inquiries can be addressed to:
 			<Condition>id:12 == 1</Condition>
 			<Content>
 				<Action>11</Action>
+				<Action>9</Action>
 			</Content>
 		</Group>
 	</Groups>
@@ -245,7 +246,7 @@ Any inquiries can be addressed to:
 	</Triggers>
 
 	<Actions>
-		<Action id="9 ">
+		<Action id="9">
 			<Name>updateUtcTime</Name>
 			<On id="9">parameter</On>
 			<Type>run actions</Type>
@@ -262,9 +263,9 @@ Any inquiries can be addressed to:
 			<Name>Very Fast Timer (1s)</Name>
 			<Time initial="true">1000</Time>
 			<Interval>75</Interval>
-			<Content>
-				<Group>90</Group>
-				<Group>111</Group>
+			<Content>		
+				<Group>9</Group>
+				<Group>11</Group>
 			</Content>
 		</Timer>
 	</Timers>
