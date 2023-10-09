@@ -55,7 +55,7 @@ Any inquiries can be addressed to:
 	<DeviceOID>147</DeviceOID>
 	<ElementType>Unknown</ElementType>
 	<Type relativeTimers="true">virtual</Type>
-	<Display defaultPage="General" pageOrder="General" wideColumnPages=""/>
+	<Display defaultPage="General" pageOrder="General" wideColumnPages="" />
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
@@ -101,7 +101,7 @@ Any inquiries can be addressed to:
 
 		<Param id="11" trending="false">
 			<Name>timer</Name>
-			<Description>tImeR</Description>
+			<Description>Timer</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>The current value of a timer in seconds.</Subtext>
@@ -133,7 +133,7 @@ Any inquiries can be addressed to:
 
 		<Param id="12" trending="false">
 			<Name>timerStatus</Name>
-			<Description>Timer StaTuS</Description>
+			<Description>Timer Status</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>Status of the timer.</Subtext>
@@ -210,7 +210,6 @@ Any inquiries can be addressed to:
 			</Measurement>
 		</Param>
 		<!-- /SuppressValidator 2.49.1 -->
-
 	</Params>
 
 	<QActions>
@@ -241,11 +240,10 @@ Any inquiries can be addressed to:
 	</Groups>
 
 	<Triggers>
-
 	</Triggers>
 
 	<Actions>
-		<Action id="9 ">
+		<Action id="9">
 			<Name>updateUtcTime</Name>
 			<On id="9">parameter</On>
 			<Type>run actions</Type>
@@ -263,8 +261,8 @@ Any inquiries can be addressed to:
 			<Time initial="true">1000</Time>
 			<Interval>75</Interval>
 			<Content>
-				<Group>90</Group>
-				<Group>111</Group>
+				<Group>9</Group>
+				<Group>11</Group>
 			</Content>
 		</Timer>
 	</Timers>
@@ -299,5 +297,4 @@ Any inquiries can be addressed to:
 			</Branch>
 		</Branches>
 	</VersionHistory>
-
 </Protocol>
