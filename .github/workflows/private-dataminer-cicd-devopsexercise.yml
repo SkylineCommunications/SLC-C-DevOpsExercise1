@@ -4,7 +4,7 @@ name: Exercise Workflow
 on:
   # Triggers the workflow on pull request events
   pull_request_target:
-
+    types: [opened]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
