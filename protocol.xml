@@ -101,7 +101,7 @@ Any inquiries can be addressed to:
 
 		<Param id="11" trending="false">
 			<Name>timer</Name>
-			<Description>tImeR</Description>
+			<Description>Timer</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>The current value of a timer in seconds.</Subtext>
@@ -133,7 +133,7 @@ Any inquiries can be addressed to:
 
 		<Param id="12" trending="false">
 			<Name>timerStatus</Name>
-			<Description>Timer StaTuS</Description>
+			<Description>Timer Status</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>Status of the timer.</Subtext>
@@ -221,7 +221,7 @@ Any inquiries can be addressed to:
 	</QActions>
 
 	<Groups>
-		<Group id="9">
+		<Group id="90">
 			<Name>updateUtcTime</Name>
 			<Description>Update UTC Time</Description>
 			<Type>poll action</Type>
@@ -229,7 +229,7 @@ Any inquiries can be addressed to:
 				<Action>9</Action>
 			</Content>
 		</Group>
-		<Group id="11">
+		<Group id="111">
 			<Name>timerIncrease</Name>
 			<Description>Timer Increase</Description>
 			<Type>poll action</Type>
@@ -245,7 +245,7 @@ Any inquiries can be addressed to:
 	</Triggers>
 
 	<Actions>
-		<Action id="9 ">
+		<Action id="9">
 			<Name>updateUtcTime</Name>
 			<On id="9">parameter</On>
 			<Type>run actions</Type>
