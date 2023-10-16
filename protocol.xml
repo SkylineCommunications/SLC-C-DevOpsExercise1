@@ -47,7 +47,7 @@ Any inquiries can be addressed to:
 <Protocol xmlns="http://www.skyline.be/protocol">
 	<Name>Skyline DevOpsExercise1</Name>
 	<Description>Skyline DevOpsExercise1 DataMiner connector</Description>
-	<Version>1.0.0.1</Version>
+	<Version>1.0.0.2</Version>
 	<IntegrationID>DMS-DRV-7991</IntegrationID>
 	<Provider>Skyline Communications</Provider>
 	<Vendor>Skyline</Vendor>
@@ -55,7 +55,7 @@ Any inquiries can be addressed to:
 	<DeviceOID>147</DeviceOID>
 	<ElementType>Unknown</ElementType>
 	<Type relativeTimers="true">virtual</Type>
-	<Display defaultPage="General" pageOrder="General" wideColumnPages=""/>
+	<Display defaultPage="General" pageOrder="General" wideColumnPages="" />
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
@@ -210,7 +210,6 @@ Any inquiries can be addressed to:
 			</Measurement>
 		</Param>
 		<!-- /SuppressValidator 2.49.1 -->
-
 	</Params>
 
 	<QActions>
@@ -241,7 +240,6 @@ Any inquiries can be addressed to:
 	</Groups>
 
 	<Triggers>
-
 	</Triggers>
 
 	<Actions>
@@ -291,6 +289,18 @@ Any inquiries can be addressed to:
 											<NewFeature>Initial version</NewFeature>
 										</Changes>
 									</MinorVersion>
+									<MinorVersion id="2" basedOn="1.0.0.1">
+										<Date>2023-10-16</Date>
+										<Provider>
+											<Author>Nathan Sciani</Author>
+											<Company>BAI Communications</Company>
+										</Provider>
+										<Changes>
+											<Fix>Removed Errors in Code. Fixed Param Names</Fix>
+											<Fix>Fixed Group numbers to Match timers</Fix>
+											<NewFeature>New Version Number</NewFeature>
+										</Changes>
+									</MinorVersion>
 								</MinorVersions>
 							</MajorVersion>
 						</MajorVersions>
@@ -299,5 +309,4 @@ Any inquiries can be addressed to:
 			</Branch>
 		</Branches>
 	</VersionHistory>
-
 </Protocol>
