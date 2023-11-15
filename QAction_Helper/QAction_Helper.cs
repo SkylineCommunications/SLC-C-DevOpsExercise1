@@ -36,13 +36,13 @@ public class WriteParameters
 {
 	/// <summary>PID: 15  | Type: write | DISCREETS: Start Timer = 0, Stop Timer = 1, Reset Timer = 2</summary>
 	public System.Object But_timeractions {get { return Protocol.GetParameter(15); }set { Protocol.SetParameter(15, value); }}
-	public SLProtocolExt Protocol;
-	public WriteParameters(SLProtocolExt protocol)
+	public ISLProtocolExt Protocol;
+	public WriteParameters(ISLProtocolExt protocol)
 	{
 		Protocol = protocol;
 	}
 }
-public interface SLProtocolExt : SLProtocol
+public interface ISLProtocolExt : ISLProtocol
 {
 	object Updateutctime_dummy { get; set; }
 	object Currenttimeutc_10 { get; set; }
@@ -55,7 +55,7 @@ public interface SLProtocolExt : SLProtocol
 	object But_timeractions { get; set; }
 	WriteParameters Write { get; set; }
 }
-public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
+public class SLProtocolExt : SLProtocol, ISLProtocolExt
 {
 	/// <summary>PID: 9  | Type: dummy</summary>
 	public System.Object Updateutctime_dummy {get { return GetParameter(9); }set { SetParameter(9, value); }}
@@ -79,7 +79,7 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	/// <summary>PID: 15  | Type: write | DISCREETS: Start Timer = 0, Stop Timer = 1, Reset Timer = 2</summary>
 	public System.Object But_timeractions {get { return Write.But_timeractions; }set { Write.But_timeractions = value; }}
 	public WriteParameters Write { get; set; }
-	public ConcreteSLProtocolExt()
+	public SLProtocolExt()
 	{
 		Write = new WriteParameters(this);
 	}
