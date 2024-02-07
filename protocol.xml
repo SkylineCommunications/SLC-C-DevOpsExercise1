@@ -231,7 +231,7 @@ Any inquiries can be addressed to:
 		</Group>
 		<Group id="11">
 			<Name>timerIncrease</Name>
-			<Description>TimerIncrease</Description>
+			<Description>Timer Increase</Description>
 			<Type>poll action</Type>
 			<Condition>id:12 == 1</Condition>
 			<Content>
