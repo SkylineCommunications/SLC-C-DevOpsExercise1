@@ -245,7 +245,7 @@ Any inquiries can be addressed to:
 	</Triggers>
 
 	<Actions>
-		<Action id="9 ">
+		<Action id="9">
 			<Name>updateUtcTime</Name>
 			<On id="9">parameter</On>
 			<Type>run actions</Type>
