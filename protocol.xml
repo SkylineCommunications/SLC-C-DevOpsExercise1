@@ -291,7 +291,7 @@ Any inquiries can be addressed to:
 											<NewFeature>Initial version</NewFeature>
 										</Changes>
 									</MinorVersion>
-									<MinorVersion id="1">
+									<MinorVersion id="2">
 										<Date>2024-03-08</Date>
 										<Provider>
 											<Author>Felix Wesemeier</Author>
