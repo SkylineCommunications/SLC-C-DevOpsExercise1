@@ -1,6 +1,6 @@
-using Skyline.DataMiner.Scripting;
-
 using System;
+
+using Skyline.DataMiner.Scripting;
 
 internal enum TimerActions
 {
