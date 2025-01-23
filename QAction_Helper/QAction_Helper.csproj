@@ -5,6 +5,8 @@
     <Copyright>© Skyline Communications</Copyright>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
     <PackageReference Include="Skyline.DataMiner.Dev.Protocol" Version="10.1.0.6" />
   </ItemGroup>
   <ProjectExtensions>

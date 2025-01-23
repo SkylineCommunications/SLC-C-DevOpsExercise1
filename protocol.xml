@@ -60,7 +60,7 @@ Any inquiries can be addressed to:
 
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
-		<MinimumRequiredVersion>10.1.0.0 - 9966</MinimumRequiredVersion>
+		<MinimumRequiredVersion>10.2.0.0 - 12603</MinimumRequiredVersion>
 	</Compliancies>
 
 	<Params>
@@ -101,7 +101,7 @@ Any inquiries can be addressed to:
 
 		<Param id="11" trending="false">
 			<Name>timer</Name>
-			<Description>tImeR</Description>
+			<Description>Timer</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>The current value of a timer in seconds.</Subtext>
@@ -133,7 +133,7 @@ Any inquiries can be addressed to:
 
 		<Param id="12" trending="false">
 			<Name>timerStatus</Name>
-			<Description>Timer StaTuS</Description>
+			<Description>Timer Status</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>Status of the timer.</Subtext>
@@ -245,7 +245,7 @@ Any inquiries can be addressed to:
 	</Triggers>
 
 	<Actions>
-		<Action id="9 ">
+		<Action id="9">
 			<Name>updateUtcTime</Name>
 			<On id="9">parameter</On>
 			<Type>run actions</Type>
@@ -263,8 +263,8 @@ Any inquiries can be addressed to:
 			<Time initial="true">1000</Time>
 			<Interval>75</Interval>
 			<Content>
-				<Group>90</Group>
-				<Group>111</Group>
+				<Group>9</Group>
+				<Group>11</Group>
 			</Content>
 		</Timer>
 	</Timers>
